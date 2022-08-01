@@ -1,0 +1,60 @@
+import { useTheme } from "next-themes";
+import React, { useEffect, useState } from "react";
+import { programsData } from "../data/programsData";
+import { BsArrowRight } from "react-icons/bs";
+function Programs() {
+  const { systemTheme, theme } = useTheme();
+
+  // To fix hydration UI mismatch issues, we need to wait until the component has mounted.
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  const renderStrokeChanger = () => {
+    if (!mounted) return null;
+
+    const currentTheme = theme === "system" ? systemTheme : theme;
+
+    if (currentTheme === "dark") {
+      return (
+        <h1 className="flex flex-col text-5xl font-bold uppercase flex-wrap">
+          <span>
+            <span className="stroke-text stroke-text-dark">Explore our</span>{" "}
+            programs&nbsp;
+          </span>
+          <span className="stroke-text stroke-text-dark">to shape you</span>
+        </h1>
+      );
+    } else {
+      return (
+        <h1 className="flex flex-col text-5xl font-bold uppercase flex-wrap">
+          <span>
+            <span className="stroke-text stroke-text-light">Shape</span>{" "}
+            your&nbsp;
+          </span>
+          <span>ideal body</span>
+        </h1>
+      );
+    }
+  };
+  return (
+    <section id="programs" className="section mt-20 px-10 flex flex-col justify-center items-center">
+      {renderStrokeChanger()}
+      <div className="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
+        {programsData.map((program) => (
+          <div className="flex flex-col gap-4 dark:text-white dark:bg-zinc-400 items-start justify-center p-8 h-full hover:cursor-pointer dark:hover:bg-orange-400 transition ease-in duration-150">
+            <span>{program.icon}</span>
+            <h3>{program.title}</h3>
+            <p className="text-start">{program.description}</p>
+            <div className="flex items-center gap-4">
+              Join Now <BsArrowRight className="w-5 h-5" />
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export default Programs;

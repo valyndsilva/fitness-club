@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  * {
+    font-family: Inter, sans-serif;
+  }
+  .layout {
+    @apply mix-blend-overlay flex flex-col gap-24 overflow-hidden;
+  }
+
+  /* Disables scrollbar in beowser */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .section {
+    @apply min-h-screen;
+  }
+  .stroke-text {
+    font-family: Arial, Helvetica, sans-serif;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    /* -webkit-text-stroke-color: white; */
+  }
+  .stroke-text-dark {
+    -webkit-text-stroke-color: white;
+  }
+  .stroke-text-light {
+    -webkit-text-stroke-color: black;
+  }
+  .planCard:nth-child(2) {
+    transform:scale(1.1);
+    background: linear-gradient(210.41deg, #fa5042 1.14%, #ffa739 100.75%);
+  }
+}
