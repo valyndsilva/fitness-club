@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
           content="Fitness Club | Gym Memberships, Flexible Monthly Gym Plans"
         />
       </Head>
-      <div className="min-h-screen flex flex-col dark:bg-appBg">
+      <div className="min-h-screen flex flex-col bg-appBg">
         <Header />
         <main className="layout flex-grow dark:bg-[#3c3f45]">{children}</main>
         <Footer />

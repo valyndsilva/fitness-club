@@ -6,22 +6,22 @@ export const testimonialsData = [
   {
     image: image1,
     review:
-      "I made the right choice by choosing the Fitclub and by choosing the right plan and program I already achieved my ideal body!",
+      "I made the right choice by choosing the Fitness club and by choosing the right plan and program I already achieved my ideal body!",
     name: "MATHEW HENDRICKSON",
-    jobTitle: "ENTREPRENEUR",
+    jobTitle: "FITNESS CLUB MEMBER",
   },
   {
     image: image2,
     review:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ipsam, ab itaque nam perferendis impedit sint ",
-    name: "JOHN KEVIN",
+      "Fitness club has the best equipment and atmosphere, and they doing are really a great job maintaining a very high hygienic level for gym lovers.  ",
+    name: "ROMANO BERNARD",
     jobTitle: "COACH",
   },
   {
     image: image3,
     review:
-      " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima aspernatur quod voluptatem",
-    name: "FRANKLIN",
-    jobTitle: "CUSTOMER",
+      "Having a fully equipped gym near to where I live is brilliant and I’m looking forward to getting back into a routine, pushing to lift heavier and coming more often.",
+    name: "PETER BROWN",
+    jobTitle: "FITNESS CLUB MEMBER",
   },
 ];

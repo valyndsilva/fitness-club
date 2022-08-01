@@ -47,38 +47,39 @@ function Plans() {
     }
   };
   return (
-    <section
-      id="programs"
-      className="section mt-20 px-10 flex flex-col justify-center items-center"
-    >
-      {renderStrokeChanger()}
-      <div className="my-10 grid grid-cols-1 md:grid-cols-3 p-5 gap-8 ">
-        {plansData.map((plan) => (
-          <div className="planCard flex flex-col gap-4 dark:text-white dark:bg-zinc-400 items-start justify-center p-8 h-full hover:cursor-pointer dark:hover:bg-orange-400 transition ease-in duration-150">
-            <span>{plan.icon}</span>
-            <h3 className="uppercase dark:text-white font-bold">
-              {plan.title}
-            </h3>
-            <h4 className="uppercase dark:text-white font-bold text-4xl mb-2">
-              $ {plan.price}
-            </h4>
-            {plan.features.map((feature, index) => (
-              <div key={index} className="">
-                <p className="flex gap-2 items-center text-start">
-                  <BsCheck2Circle className="w-8 h-8 dark:text-white" />
-                  {feature}
-                </p>
-              </div>
-            ))}
+    <section id="programs" className="relative">
+      <div className="blur-spot blur-[150px] plan-blur-1"></div>
+      <div className="blur-spot blur-[150px] plan-blur-2"></div>
+      <div className="section min-h-screen mt-20 flex flex-col justify-center items-center w-[80vw] mx-auto">
+        {renderStrokeChanger()}
+        <div className="my-10 grid grid-cols-1 md:grid-cols-3 p-5 gap-8 ">
+          {plansData.map((plan) => (
+            <div className="planCard shadow-lg flex flex-col gap-4 dark:text-white dark:bg-zinc-400 items-start justify-center p-8 h-full hover:cursor-pointer dark:hover:bg-orange-400 transition ease-in duration-150">
+              <span>{plan.icon}</span>
+              <h3 className="uppercase dark:text-white font-bold">
+                {plan.title}
+              </h3>
+              <h4 className="uppercase dark:text-white font-bold text-4xl mb-2">
+                $ {plan.price}
+              </h4>
+              {plan.features.map((feature, index) => (
+                <div key={index} className="">
+                  <p className="flex gap-2 items-center text-start">
+                    <BsCheck2Circle className="w-8 h-8 dark:text-white" />
+                    {feature}
+                  </p>
+                </div>
+              ))}
 
-            <p className="flex gap-2 items-center text-start text-sm">
-              See more benefits <BsArrowRight className="w-5 h-5" />
-            </p>
-            <button className="flex items-center gap-4 dark:bg-white dark:text-black px-3 py-2 w-full text-center justify-center">
-              Join Now
-            </button>
-          </div>
-        ))}
+              <p className="flex gap-2 items-center text-start text-sm">
+                See more benefits <BsArrowRight className="w-5 h-5" />
+              </p>
+              <button className="flex items-center gap-4  shadow-lg bg-zinc-400 text-white dark:bg-white dark:text-black px-3 py-2 w-full text-center justify-center">
+                Join Now
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

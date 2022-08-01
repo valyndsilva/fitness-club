@@ -7,3 +7,5 @@ sanity init
 npm install next-themes
 npm install react-icons
 npm run dev
+npm install @emailjs/browser
+https://www.emailjs.com/docs/examples/reactjs/
