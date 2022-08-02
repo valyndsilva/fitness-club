@@ -140,37 +140,35 @@ function Header() {
               </div>
             )}
             <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
-              <div className="fixed right-0 top-[7rem] bg-zinc-600 py-4 px-12 flex flex-col items-center justify-between min-h-[250px]">
-              <Link href="#hero">
-              <a className="hover:text-orange-400 py-4 px-4">
-                <span className="">Home </span>
-              </a>
-            </Link>
-            <Link href="#programs">
-              <a className="hover:text-orange-400  py-4 px-4">
-                <span className="">Programs </span>
-              </a>
-            </Link>
-            <Link href="#reasons">
-              <a className="hover:text-orange-400  py-4 px-4">
-                <span className="">Why Us? </span>
-              </a>
-            </Link>
-            <Link href="#plans">
-              <a className="hover:text-orange-400  py-4 px-4">
-                <span className="">Plans </span>
-              </a>
-            </Link>
-            <Link href="#testimonials">
-              <a className="hover:text-orange-400  py-4 px-4">
-                <span className="">Testimonials </span>
-              </a>
-            </Link>
-            <Link href="#join-us">
-              <a className="hover:text-orange-400  py-4 px-4">
-                Join Now
-              </a>
-            </Link>
+              <div className="fixed right-0 top-[6rem] bg-zinc-600 py-4 px-12 flex flex-col items-center justify-between min-h-[250px]">
+                <Link href="#hero">
+                  <a className="hover:text-orange-400 py-4 px-4">
+                    <span className="">Home </span>
+                  </a>
+                </Link>
+                <Link href="#programs">
+                  <a className="hover:text-orange-400  py-4 px-4">
+                    <span className="">Programs </span>
+                  </a>
+                </Link>
+                <Link href="#reasons">
+                  <a className="hover:text-orange-400  py-4 px-4">
+                    <span className="">Why Us? </span>
+                  </a>
+                </Link>
+                <Link href="#plans">
+                  <a className="hover:text-orange-400  py-4 px-4">
+                    <span className="">Plans </span>
+                  </a>
+                </Link>
+                <Link href="#testimonials">
+                  <a className="hover:text-orange-400  py-4 px-4">
+                    <span className="">Testimonials </span>
+                  </a>
+                </Link>
+                <Link href="#join-us">
+                  <a className="hover:text-orange-400  py-4 px-4">Join Now</a>
+                </Link>
               </div>
             </div>
           </div>

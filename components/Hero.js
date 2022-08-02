@@ -7,6 +7,7 @@ import caloriesImg from "../public/assets/calories.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import NumberCounter from "number-counter";
+import Link from "next/link";
 function Hero() {
   const { systemTheme, theme } = useTheme();
 
@@ -86,12 +87,16 @@ function Hero() {
             </div>
           </div>
           <div className="flex gap-4 mt-10">
-            <button className="text-md w-32 bg-orange-400 dark:text-white rounded-md  p-2 shadow-lg transition-all ease-in duration-300 hover:cursor-pointer">
-              Get Started
-            </button>
-            <button className="text-md w-32 bg-transparent dark:text-white border border-orange-400 rounded-md  p-2 shadow-lg transition-all ease-in duration-300 hover:cursor-pointer">
-              Learn More
-            </button>
+            <Link href="#plans">
+              <button className="text-md w-32 bg-orange-400 dark:text-white rounded-md  p-2 shadow-lg transition-all ease-in duration-300 hover:cursor-pointer">
+                Get Started
+              </button>
+            </Link>
+            <Link href="#programs">
+              <button className="text-md w-32 bg-transparent dark:text-white border border-orange-400 rounded-md  p-2 shadow-lg transition-all ease-in duration-300 hover:cursor-pointer">
+                Learn More
+              </button>
+            </Link>
           </div>
         </div>
         <div className="lg:col-span-2 relative  lg:bg-orange-400">
