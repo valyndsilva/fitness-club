@@ -47,14 +47,17 @@ function Plans() {
     }
   };
   return (
-    <section id="programs" className="relative">
+    <section id="plans" className="relative">
       <div className="blur-spot blur-[150px] plan-blur-1"></div>
       <div className="blur-spot blur-[150px] plan-blur-2"></div>
       <div className="section min-h-screen mt-20 flex flex-col justify-center items-center w-[80vw] mx-auto">
         {renderStrokeChanger()}
         <div className="my-10 grid grid-cols-1 md:grid-cols-3 p-5 gap-8 ">
-          {plansData.map((plan) => (
-            <div className="planCard shadow-lg flex flex-col gap-4 dark:text-white dark:bg-zinc-400 items-start justify-center p-8 h-full hover:cursor-pointer dark:hover:bg-orange-400 transition ease-in duration-150">
+          {plansData.map((plan, index) => (
+            <div
+              key={index}
+              className="planCard shadow-lg flex flex-col gap-4 dark:text-white dark:bg-zinc-400 items-start justify-center p-8 h-full hover:cursor-pointer dark:hover:bg-orange-400 transition ease-in duration-150"
+            >
               <span>{plan.icon}</span>
               <h3 className="uppercase dark:text-white font-bold">
                 {plan.title}
@@ -74,7 +77,7 @@ function Plans() {
               <p className="flex gap-2 items-center text-start text-sm">
                 See more benefits <BsArrowRight className="w-5 h-5" />
               </p>
-              <button className="flex items-center gap-4  shadow-lg bg-zinc-400 text-white dark:bg-white dark:text-black px-3 py-2 w-full text-center justify-center">
+              <button className="flex items-center gap-4  shadow-lg rounded-md bg-zinc-400  text-white dark:bg-white dark:text-black px-3 py-2 w-full text-center justify-center">
                 Join Now
               </button>
             </div>

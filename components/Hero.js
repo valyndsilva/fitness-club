@@ -48,7 +48,7 @@ function Hero() {
     <section id="hero" className="relative ">
       <div className="blur-spot hero-blur blur-[150px] "></div>
       <div className="min-h-screen  grid grid-cols-1 lg:grid-cols-8 gap-8 mb-20">
-        <div className="lg:col-span-6 px-10 z-30 flex flex-col justify-center">
+        <div className="pt-24 lg:col-span-6 px-10 z-30 flex flex-col justify-center">
           <div className=" relative flex mt-10 lg:mt-0 md:w-[50vw] lg:w-[30vw] items-center justify-center bg-orange-100 dark:bg-zinc-800 rounded-full px-3 py-5 uppercase">
             <motion.div
               initial={{ left: "360px" }}

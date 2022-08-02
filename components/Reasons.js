@@ -53,7 +53,7 @@ function Reasons() {
   };
   return (
     <section
-      id="reason"
+      id="reasons"
       className="section min-h-screen grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-center w-[80vw] mx-auto"
     >
       <div className="col-span-2 md:col-span-2 ">

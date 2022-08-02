@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@react-hook/media-query": "^1.1.1",
     "firebase": "^9.9.1",
     "framer-motion": "^6.5.1",
     "next": "latest",
