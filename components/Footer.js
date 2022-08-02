@@ -26,15 +26,15 @@ function Footer() {
     }
   };
   return (
-    <footer className="flex w-full items-center justify-between text-center px-10 space-y-4 h-40 border-t relative">
-      <div className="flex space-x-8">
-        <BsInstagram className="h-8 w-8 dark:text-white" />
-        <BsFacebook className="h-8 w-8 dark:text-white" />
-        <BsLinkedin className="h-8 w-8 dark:text-white" />
+    <footer className="md:inline-flex w-full items-center justify-center md:justify-between text-center px-10 space-y-4 h-40 border-t relative">
+      <div className="flex space-x-8 my-8 w-auto items-center justify-center">
+        <BsInstagram className="h-8 w-8 dark:text-zinc-400" />
+        <BsFacebook className="h-8 w-8 dark:text-zinc-400" />
+        <BsLinkedin className="h-8 w-8 dark:text-zinc-400" />
       </div>
-      <span className="mt-0">Designed by Valyn Silva.</span>
-      <div className="relative w-36 h-16 flex items-center justify-center">
-      {renderLogoChanger()}
+      <span className="mt-0 dark:text-zinc-400">Designed by Valyn Silva.</span>
+      <div className="relative w-36 h-16  items-center justify-center hidden md:inline-flex">
+        {renderLogoChanger()}
       </div>
     </footer>
   );

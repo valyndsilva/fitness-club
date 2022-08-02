@@ -33,9 +33,11 @@
   .planCard:nth-child(2) {
     transform: scale(1.1);
     background: linear-gradient(210.41deg, #fa5042 1.14%, #ffa739 100.75%);
+  }
 
-    @media screen and (max-width: 768px) {
-      transform: scale(1);
+  @media screen and (max-width: 768px) {
+    .planCard:nth-child(2) {
+      transform: none;
     }
   }
 

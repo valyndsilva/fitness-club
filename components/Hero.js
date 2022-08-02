@@ -80,7 +80,7 @@ function Hero() {
             </div>
             <div className="">
               <h2 className="title-font font-medium sm:text-4xl text-3xl">
-                <NumberCounter end={50} start={0} delay="4" preFix="+" />
+                <NumberCounter end={50} start={35} delay="4" preFix="+" />
               </h2>
               <p className="leading-relaxed uppercase">Fitness Programs</p>
             </div>

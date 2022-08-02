@@ -39,11 +39,17 @@ function Programs() {
     }
   };
   return (
-    <section id="programs"   className="section min-h-screen w-[80vw] mt-20 px-10 flex flex-col justify-center items-center mx-auto">
+    <section
+      id="programs"
+      className="section min-h-screen w-[80vw] mt-20 px-10 flex flex-col justify-center items-center mx-auto"
+    >
       {renderStrokeChanger()}
       <div className="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
-        {programsData.map((program) => (
-          <div className="flex flex-col gap-4 shadow-lg dark:text-white dark:bg-zinc-400 items-start justify-center p-8 h-full hover:cursor-pointer dark:hover:bg-orange-400 transition ease-in duration-150">
+        {programsData.map((program, index) => (
+          <div
+            key={index}
+            className="flex flex-col gap-4 shadow-lg dark:text-white dark:bg-zinc-400 items-start justify-center p-8 h-full hover:cursor-pointer dark:hover:bg-orange-400 transition ease-in duration-150"
+          >
             <span>{program.icon}</span>
             <h3>{program.title}</h3>
             <p className="text-start">{program.description}</p>
