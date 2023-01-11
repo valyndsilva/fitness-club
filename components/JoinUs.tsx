@@ -46,10 +46,7 @@ function JoinUs() {
 
   const [message, setMessage] = useState("");
   const formRef = useRef();
-  const submitContact = async (e: {
-    preventDefault: () => void;
-    target: { value: any }[];
-  }) => {
+  const submitContact = async (e: any) => {
     e.preventDefault();
     console.log(e);
     const res = await sendContactForm({
@@ -86,7 +83,7 @@ function JoinUs() {
         )}
         <form
           id="contact-form"
-          ref={formRef}
+          // ref={formRef}
           onSubmit={submitContact}
           className="flex flex-wrap -m-2 md:w-1/2 mx-auto"
         >
