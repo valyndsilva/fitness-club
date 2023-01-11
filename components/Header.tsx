@@ -79,7 +79,7 @@ function Header() {
 
   const isSmallScreen = useMediaQuery("(max-width: 1024px)");
   const [isNavOpen, setIsNavOpen] = useState(false);
-  console.log(isNavOpen);
+  // console.log(isNavOpen);
   return (
     <header
       className={`${
@@ -93,27 +93,27 @@ function Header() {
         <nav>
           <div className="hidden lg:inline-flex space-x-8 items-center">
             <Link href="#hero">
-              <a className="hover:text-orange-400">
+              <a className="hover:font-bold dark:hover:font-medium dark:hover:text-orange-600">
                 <span className="">Home </span>
               </a>
             </Link>
             <Link href="#programs">
-              <a className="hover:text-orange-400">
+              <a className="hover:font-bold dark:hover:font-medium dark:hover:text-orange-600">
                 <span className="">Programs </span>
               </a>
             </Link>
             <Link href="#reasons">
-              <a className="hover:text-orange-400">
+              <a className="hover:font-bold dark:hover:font-medium dark:hover:text-orange-600">
                 <span className="">Why Us? </span>
               </a>
             </Link>
             <Link href="#plans">
-              <a className="hover:text-orange-400">
+              <a className="hover:font-bold dark:hover:font-medium dark:hover:text-orange-600">
                 <span className="">Plans </span>
               </a>
             </Link>
             <Link href="#testimonials">
-              <a className="hover:text-orange-400">
+              <a className="hover:font-bold dark:hover:font-medium dark:hover:text-orange-600">
                 <span className="">Testimonials </span>
               </a>
             </Link>

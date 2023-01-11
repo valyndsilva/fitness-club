@@ -88,12 +88,12 @@ function Hero() {
           </div>
           <div className="flex gap-4 mt-10">
             <Link href="#plans">
-              <button className="text-md w-32 bg-orange-400 dark:text-white rounded-md  p-2 shadow-lg transition-all ease-in duration-300 hover:cursor-pointer">
+              <button className="text-md w-32 bg-orange-400 hover:bg-orange-500 dark:text-white rounded-md  p-2 shadow-lg transition-all ease-in duration-300 hover:cursor-pointer">
                 Get Started
               </button>
             </Link>
             <Link href="#programs">
-              <button className="text-md w-32 bg-transparent dark:text-white border border-orange-400 rounded-md  p-2 shadow-lg transition-all ease-in duration-300 hover:cursor-pointer">
+              <button className="text-md w-32 bg-transparent hover:bg-orange-500 dark:text-white border border-orange-400 rounded-md  p-2 shadow-lg transition-all ease-in duration-300 hover:cursor-pointer">
                 Learn More
               </button>
             </Link>

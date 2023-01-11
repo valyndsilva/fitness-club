@@ -56,7 +56,7 @@ function Plans() {
           {plansData.map((plan, index) => (
             <div
               key={index}
-              className="planCard shadow-lg flex flex-col gap-4 dark:text-white dark:bg-zinc-400 items-start justify-center p-8 h-full hover:cursor-pointer dark:hover:bg-orange-400 transition ease-in duration-150"
+              className="planCard shadow-lg flex flex-col gap-4 dark:text-white dark:bg-zinc-400 items-start justify-center p-8 h-full hover:cursor-pointer dark:hover:bg-orange-400 hover:bg-orange-300 transition ease-in duration-150"
             >
               <span>{plan.icon}</span>
               <h3 className="uppercase dark:text-white font-bold">
@@ -77,7 +77,7 @@ function Plans() {
               <p className="flex gap-2 items-center text-start text-sm">
                 See more benefits <BsArrowRight className="w-5 h-5" />
               </p>
-              <button className="flex items-center gap-4  shadow-lg rounded-md bg-zinc-400  text-white dark:bg-white dark:text-black px-3 py-2 w-full text-center justify-center">
+              <button className="flex items-center gap-4  shadow-lg rounded-md bg-zinc-400  text-white dark:bg-white hover:shadow-md  dark:hover:text-white dark:hover:bg-zinc-600 hover:bg-zinc-600 dark:text-black px-3 py-2 w-full text-center justify-center">
                 Join Now
               </button>
             </div>

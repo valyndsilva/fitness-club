@@ -1,7 +1,11 @@
 import Head from "next/head";
-import { Header, Footer } from "./";
+import React from "react";
+import { Header, Footer } from ".";
 
-const Layout = ({ children }) => {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Head>

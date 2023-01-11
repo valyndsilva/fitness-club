@@ -127,8 +127,9 @@ function JoinUs() {
           <div className="p-2 mx-auto">
             <button
               type="submit"
-              className="flex items-center justify-center text-center space-x-4 font-light text-sm font-firacode  shadow-md bg-zinc-500  text-zinc-200 dark:bg-zinc-400 dark:text-zinc-800 px-4 py-3 rounded-lg"
+              className="flex items-center justify-center text-center space-x-4 font-light text-sm font-firacode  shadow-md bg-zinc-500 hover:bg-orange-400 dark:hover:bg-orange-400 hover:text-zinc-800 hover:font-medium  text-zinc-200 dark:bg-zinc-400 dark:text-zinc-800 px-4 py-3 rounded-lg"
             >
+              {/* <button className="flex space-x-4 text-md bg-transparent hover:bg-orange-500 dark:text-white border border-orange-400 rounded-md  p-2 shadow-lg transition-all ease-in duration-300 hover:cursor-pointer"> */}
               <BiPaperPlane className="w-5 h-5" />
               <p>Send Message</p>
             </button>

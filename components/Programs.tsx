@@ -48,13 +48,13 @@ function Programs() {
         {programsData.map((program, index) => (
           <div
             key={index}
-            className="flex flex-col gap-4 shadow-lg dark:text-white dark:bg-zinc-400 items-start justify-center p-8 h-full hover:cursor-pointer dark:hover:bg-orange-400 transition ease-in duration-150"
+            className="flex flex-col gap-4 shadow-lg dark:text-white dark:bg-zinc-400 items-start justify-center p-8 h-full hover:cursor-pointer dark:hover:bg-orange-400 hover:bg-orange-300 transition ease-in duration-150"
           >
             <span>{program.icon}</span>
             <h3>{program.title}</h3>
             <p className="text-start">{program.description}</p>
-            <div className="flex items-center gap-4">
-              Join Now <BsArrowRight className="w-5 h-5" />
+            <div className="flex items-center gap-4 hover:font-bold">
+              Join Now <BsArrowRight className="w-5 h-5 " />
             </div>
           </div>
         ))}
