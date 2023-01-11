@@ -46,7 +46,10 @@ function JoinUs() {
 
   const [message, setMessage] = useState("");
   const formRef = useRef();
-  const submitContact = async (e) => {
+  const submitContact = async (e: {
+    preventDefault: () => void;
+    target: { value: any }[];
+  }) => {
     e.preventDefault();
     console.log(e);
     const res = await sendContactForm({
@@ -57,7 +60,7 @@ function JoinUs() {
     if (res == 0) {
       setMessage("Thank you for your valuable comment!");
       // formRef.current.reset();
-      document.getElementById("contact-form").reset();
+      document.getElementById("contact-form")!.reset();
     } else {
       setMessage("Something went wrong! Please try again");
     }
