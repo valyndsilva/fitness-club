@@ -60,7 +60,7 @@ function JoinUs() {
     if (res == 0) {
       setMessage("Thank you for your valuable comment!");
       // formRef.current.reset();
-      document.getElementById("contact-form")!.reset();
+      // document.getElementById("contact-form")!.reset();
     } else {
       setMessage("Something went wrong! Please try again");
     }
