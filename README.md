@@ -15,14 +15,14 @@
 
 Checkout the [demo here](https://fitness-club-valyndsilva.vercel.app/)
 
-### Demo
+### Dark Mode
 
-![](/public/gifs/.gif)
+![](/public/gifs/Dark-mode.gif)
 
-[Expand](/public/demos/.mp4)
+[Expand](/public/demos/Dark-mode.mp4)
 
 ### Light Mode
 
-![](/public/gifs/.gif)
+![](/public/gifs/light-mode.gif)
 
-[Expand](/public/demos/.mp4)
+[Expand](/public/demos/light-mode.mp4)
