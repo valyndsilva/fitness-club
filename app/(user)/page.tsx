@@ -3,7 +3,6 @@ import {
   Hero,
   JoinUs,
   Plans,
-  Programs,
   Reasons,
   Testimonials,
 } from "@/app/(user)/components";
