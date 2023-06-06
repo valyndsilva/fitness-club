@@ -6,16 +6,11 @@ import exercisesContext from "@/context/exercisesContext";
 // import { bodyPartsData, exercisesData } from "@/data/exerciseDbData";
 
 export default function SearchExercises() {
-  const { systemTheme, theme } = useTheme();
   const { bodyParts, setBodyParts, setExercises, exercises } =
     useContext(exercisesContext);
-
-  // To fix hydration UI mismatch issues, we need to wait until the component has mounted.
-  const [mounted, setMounted] = useState(false);
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    setMounted(true);
     const fetchBodyPartsData = async () => {
       const bodyPartsResponse = await fetch("api/exercises/bodyPartList");
       const bodyPartsData = await bodyPartsResponse.json();
@@ -25,7 +20,7 @@ export default function SearchExercises() {
 
       // Use dummy data
       // setBodyParts(["all", ...bodyPartsData]);
-      setBodyParts([...bodyPartsData]);
+      // setBodyParts([...bodyPartsData]);
     };
     fetchBodyPartsData();
   }, []);
@@ -58,26 +53,24 @@ export default function SearchExercises() {
   };
 
   const renderStrokeChanger = () => {
-    if (!mounted) return null;
-
-    const currentTheme = theme === "system" ? systemTheme : theme;
-
-    if (currentTheme === "dark") {
+    const { theme } = useTheme();
+    console.log({ theme });
+    if (theme === "dark") {
       return (
-        <h1 className="flex flex-col text-5xl font-bold uppercase flex-wrap">
+        <h1 className="flex flex-col text-3xl lg:text-7xl font-bold uppercase flex-wrap">
           <span>
-            <span className="stroke-text stroke-text-dark">Exercises</span>
+            <span className="stroke-text stroke-text-dark">Must-Know </span>
           </span>
-          <span className="stroke-text stroke-text-dark">you should know</span>
+          <span className="stroke-text stroke-text-dark">Exercises</span>
         </h1>
       );
     } else {
       return (
-        <h1 className="flex flex-col text-5xl font-bold uppercase flex-wrap">
+        <h1 className="flex flex-col text-3xl lg:text-7xl font-bold uppercase flex-wrap">
           <span>
-            <span className="stroke-text stroke-text-light">Exercises</span>
+            <span className="stroke-text stroke-text-light">Must-Know </span>
           </span>
-          <span>you should know</span>
+          <span>Exercises</span>
         </h1>
       );
     }

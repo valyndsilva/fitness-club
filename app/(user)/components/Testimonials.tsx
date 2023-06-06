@@ -1,26 +1,16 @@
 "use client";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import { testimonialsData } from "@/data/testimonialsData";
 import { motion } from "framer-motion";
 
 function Testimonials() {
-  const { systemTheme, theme } = useTheme();
-
-  // To fix hydration UI mismatch issues, we need to wait until the component has mounted.
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
   const renderStrokeChanger = () => {
-    if (!mounted) return null;
-
-    const currentTheme = theme === "system" ? systemTheme : theme;
-
-    if (currentTheme === "dark") {
+    const { theme } = useTheme();
+    console.log({ theme });
+    if (theme === "dark") {
       return (
         <div className="space-y-2">
           <span className="flex flex-col text-lg font-semibold uppercase text-orange-400 text-start">
@@ -100,7 +90,7 @@ function Testimonials() {
           </div>
         </div>
       </div>
-      <div className="col-span-1 ">
+      <div className="hidden md:block md:col-span-1 ">
         <div className="relative mt-40 lg:mt-10 space-y-2 uppercase dark:text-white text-lg text-start items-center justify-center flex">
           <motion.div
             initial={{ opacity: 0, x: -100 }}

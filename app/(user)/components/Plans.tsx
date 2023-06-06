@@ -15,17 +15,6 @@ function Plans() {
     setMounted(true);
   }, []);
 
-  const plan = {
-    icon: <FaCrown className="w-10 h-10 fill-white" />,
-    title: "PREMIUM PLAN",
-    price: "79.99",
-    features: [
-      "Unlimited Access",
-      "Personalized Workout Plans",
-      "No Recurring Charges",
-      "Premium Content",
-    ],
-  };
   const renderStrokeChanger = () => {
     if (!mounted) return null;
 
@@ -59,8 +48,8 @@ function Plans() {
   };
   return (
     <section id="plans" className="relative">
-      <div className="blur-spot1 blur-[150px] plan-blur-1"></div>
-      <div className="blur-spot2 blur-[150px] plan-blur-2"></div>
+      <div className="lg:blur-spot1 lg:blur-[150px] lg:plan-blur-1"></div>
+      <div className="lg:blur-spot2 lg:blur-[150px] lg:plan-blur-2"></div>
       <div className="section min-h-screen mt-20 flex flex-col justify-center items-center w-[80vw] mx-auto">
         {renderStrokeChanger()}
         <div className="my-10 grid grid-cols-1 md:grid-cols-3 p-5 gap-8 ">
@@ -69,13 +58,18 @@ function Plans() {
               key={index}
               className="planCard shadow-lg flex flex-col gap-4 dark:text-white dark:bg-zinc-400 items-start justify-center p-8 h-full hover:cursor-pointer dark:hover:bg-orange-400 hover:bg-orange-300 transition ease-in duration-150"
             >
-              <span>{plan.icon}</span>
-              <h3 className="uppercase dark:text-white font-bold">
-                {plan.title}
-              </h3>
-              <h4 className="uppercase dark:text-white font-bold text-4xl mb-2">
-                $ {plan.price}
-              </h4>
+              <div className="flex items-center justify-between w-full space-x-4">
+                <div className="flex items-center space-x-2">
+                  <span>{plan.icon}</span>
+                  <h3 className="uppercase dark:text-white font-bold">
+                    {plan.title}
+                  </h3>
+                </div>
+                <h4 className="uppercase dark:text-white font-bold text-4xl mb-2">
+                  £{plan.price}
+                </h4>
+              </div>
+
               {plan.features.map((feature, index) => (
                 <div key={index} className="">
                   <p className="flex gap-2 items-center text-start">
@@ -84,10 +78,6 @@ function Plans() {
                   </p>
                 </div>
               ))}
-
-              {/* <p className="flex gap-2 items-center text-start text-sm">
-                See more benefits <BsArrowRight className="w-5 h-5" />
-              </p> */}
               <Link href="/exercises">
                 <button className="flex items-center gap-4  shadow-lg rounded-md bg-zinc-400  text-white dark:bg-white hover:shadow-md  dark:hover:text-white dark:hover:bg-zinc-600 hover:bg-zinc-600 dark:text-black px-3 py-2 w-full text-center justify-center">
                   Join Now

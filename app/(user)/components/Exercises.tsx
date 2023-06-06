@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Pagination from "@mui/material/Pagination";
 import Loader from "./Loader";
 import ExerciseCard from "./ExerciseCard";
-import { exercisesData } from "@/data/exerciseDbData";
+// import { exercisesData } from "@/data/exerciseDbData";
 
 type Props = {};
 
@@ -31,32 +31,32 @@ export default function Exercises({}: Props) {
     const fetchExercisesData = async () => {
       let data = [];
       if (bodyPart === "all") {
-        //  const exercisesResponse = await fetch("api/exercises");
-        //  const exercisesData = await exercisesResponse.json();
-        //  console.log({exercisesData}); 
-        //  data = exercisesData;
+         const exercisesResponse = await fetch("api/exercises");
+         const exercisesData = await exercisesResponse.json();
+         console.log({exercisesData}); 
+         data = exercisesData;
         
         // Use dummy data
-        data = exercisesData;
+        // data = exercisesData;
       } else {
-        // const bodyPartResponse = await fetch(
-        //   `api/exercises/bodyPart/${bodyPart}`
-        // );
-        // const bodyPartData = await bodyPartResponse.json();
-        // console.log(bodyPartData);
-        // data = bodyPartData;
+        const bodyPartResponse = await fetch(
+          `api/exercises/bodyPart/${bodyPart}`
+        );
+        const bodyPartData = await bodyPartResponse.json();
+        console.log(bodyPartData);
+        data = bodyPartData;
 
 
         // Use dummy data
-        const bodyPartData = exercisesData.filter(
-          (exercise: any) =>
-            exercise.name.toLowerCase().includes(bodyPart) ||
-            exercise.target.toLowerCase().includes(bodyPart) ||
-            exercise.equipment.toLowerCase().includes(bodyPart) ||
-            exercise.bodyPart.toLowerCase().includes(bodyPart)
-        );
-        console.log(bodyPartData);
-        data = bodyPartData;
+        // const bodyPartData = exercisesData.filter(
+        //   (exercise: any) =>
+        //     exercise.name.toLowerCase().includes(bodyPart) ||
+        //     exercise.target.toLowerCase().includes(bodyPart) ||
+        //     exercise.equipment.toLowerCase().includes(bodyPart) ||
+        //     exercise.bodyPart.toLowerCase().includes(bodyPart)
+        // );
+        // console.log(bodyPartData);
+        // data = bodyPartData;
       }
       setExercises(data);
     };
@@ -69,7 +69,7 @@ export default function Exercises({}: Props) {
     <div className="max-w-7xl mx-auto p-5">
       <h4 className="text-3xl lg:text-4xl mb-10">
         Exercise results for{" "}
-        <span className="font-medium text-orange-500">{bodyPart}</span>:
+        <span className="font-medium capitalize text-orange-500">{bodyPart}</span>:
       </h4>
       <div className="grid md:grid-cols-6 lg:grid-cols-9 gap-4">
         {currentExercises?.map((exercise: any, idx: number) => (
@@ -90,6 +90,7 @@ export default function Exercises({}: Props) {
             size="large"
           />
         )}
+        
       </div>
     </div>
   );

@@ -1,39 +1,28 @@
 "use client";
 import { useTheme } from "next-themes";
-import React, { useEffect, useRef, useState } from "react";
+import React, {useRef, useState } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { BiPaperPlane } from "react-icons/bi";
 import { sendContactForm } from "../../../services";
 function JoinUs() {
-  const { systemTheme, theme } = useTheme();
-
-  // To fix hydration UI mismatch issues, we need to wait until the component has mounted.
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
   const renderStrokeChanger = () => {
-    if (!mounted) return null;
-
-    const currentTheme = theme === "system" ? systemTheme : theme;
-
-    if (currentTheme === "dark") {
+    const { theme } = useTheme();
+    console.log({ theme });
+    if (theme === "dark") {
       return (
         <div className="space-y-5">
           <h1 className="flex flex-col text-5xl font-bold uppercase flex-wrap text-center">
             <span>
-              <span className="stroke-text stroke-text-dark">Get</span>{" "}
-               In Touch&nbsp;{" "}
+              <span className="stroke-text stroke-text-dark">Get</span> In
+              Touch&nbsp;{" "}
             </span>
           </h1>
-              <p className="text-lg text-white">
-                Have a question or need assistance? Reach out to our friendly
-                support team. We're here to help you make the most of your
-                Fitness Club experience. Contact us via phone, email, or fill
-                out our online form, and we'll get back to you as soon as
-                possible.
-              </p>
+          <p className="text-lg text-white">
+            Have a question or need assistance? Reach out to our friendly
+            support team. We're here to help you make the most of your Fitness
+            Club experience. Fill out our online
+            form, and we'll get back to you as soon as possible.
+          </p>
         </div>
       );
     } else {
@@ -41,14 +30,14 @@ function JoinUs() {
         <div className="space-y-5">
           <h1 className="flex flex-col text-5xl font-bold uppercase flex-wrap text-center">
             <span>
-              <span className="stroke-text stroke-text-light">Get</span>{" "}
-               In Touch&nbsp;
+              <span className="stroke-text stroke-text-light">Get</span> In
+              Touch&nbsp;
             </span>
           </h1>
           <p className="text-lg text-black">
             Have a question or need assistance? Reach out to our friendly
             support team. We're here to help you make the most of your Fitness
-            Club experience. Contact us via phone, email, or fill out our online
+            Club experience. Fill out our online
             form, and we'll get back to you as soon as possible.
           </p>
         </div>
@@ -76,10 +65,7 @@ function JoinUs() {
   };
 
   return (
-    <section
-      id="join-us"
-      className="section mt-20 flex  dark:bg-zinc-800 bg-zinc-400 border-t"
-    >
+    <section id="join-us" className="section mt-20 flex">
       <div className="my-10 flex flex-col gap-4 w-[80vw] mx-auto items-center justify-center ">
         <div className=" my-5">{renderStrokeChanger()}</div>
         {message && (

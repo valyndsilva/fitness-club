@@ -10,5 +10,6 @@ export async function GET() {
   } as RequestInit);
   const data = await res.json();
   const exercisesData = data;
+  // console.log(exercisesData);
   return NextResponse.json(exercisesData);
 }

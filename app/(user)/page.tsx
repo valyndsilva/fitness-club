@@ -14,11 +14,12 @@ export default function page({}: Props) {
   return (
     <main className="flex w-full flex-col justify-center text-center">
       <Hero />
-      {/* <Programs /> */}
-      <Reasons />
-      <Plans />
-      <Testimonials />
-      <JoinUs />
+      <div className="max-w-7xl mx-auto">
+        <Reasons />
+        <Plans />
+        <Testimonials />
+        <JoinUs />
+      </div>
     </main>
   );
 }

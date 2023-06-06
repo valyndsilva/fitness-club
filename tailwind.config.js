@@ -14,9 +14,26 @@ module.exports = {
       },
       colors: {
         turmeric: "#FCE386",
-        darkTurmeric: "#DB953D",
         aqua: "#B5E6EE",
         ash: "#6D6B78",
+        darkTurmeric: "#FD3C0B",
+        darkAqua: "#2D9CDB",
+        darkAsh: "#151C24",
+      },
+      animation: {
+        wiggle: "wiggle 1.5s ease-in-out infinite",
+        move: "move 3s linear infinite alternate",
+      },
+      keyframes: {
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
+        },
+        move: {
+          "0%": { transform: "translate(0, 0)" },
+          "50%": { transform: "translate(-5px, 10px)" },
+          "100%": { transform: "translate(5px, 20px)" },
+        },
       },
     },
 

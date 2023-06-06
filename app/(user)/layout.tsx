@@ -29,7 +29,9 @@ export default function RootLayout({
       >
         <Providers>
           <Header />
-          <main className="flex-grow dark:bg-[#3c3f45]">{children}</main>
+          <main className="w-full flex-grow dark:bg-darkAsh">
+            {children}
+          </main>
           <Footer />
         </Providers>
       </body>

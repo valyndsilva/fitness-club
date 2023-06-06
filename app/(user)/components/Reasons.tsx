@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import img1 from "app/assets/reasons-img.png";
 import nb from "app/assets/nb.png";
 import adidas from "app/assets/adidas.png";
@@ -9,20 +9,10 @@ import nike from "app/assets/nike.png";
 import { BsCheck2Circle } from "react-icons/bs";
 
 function Reasons() {
-  const { systemTheme, theme } = useTheme();
-
-  // To fix hydration UI mismatch issues, we need to wait until the component has mounted.
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
   const renderStrokeChanger = () => {
-    if (!mounted) return null;
-
-    const currentTheme = theme === "system" ? systemTheme : theme;
-
-    if (currentTheme === "dark") {
+    const { theme } = useTheme();
+    console.log({ theme });
+    if (theme === "dark") {
       return (
         <div className="space-y-2">
           <span className="flex flex-col text-lg font-semibold uppercase text-orange-400 text-start">

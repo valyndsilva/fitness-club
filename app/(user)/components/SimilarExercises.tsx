@@ -3,9 +3,8 @@ import HorizontalScrollBar from "./HorizontalScrollBar";
 import Loader from "./Loader";
 import exercisesContext from "@/context/exercisesContext";
 
-type Props = {};
 
-export default function SimilarExercises({}: Props) {
+export default function SimilarExercises() {
   const { targetMuscleExercises, equipmentExercises } =
     useContext(exercisesContext);
   return (

@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 
 export async function GET(request: Request, { params }: { params: { slug: string } }) {
-  console.log(params);
+  // console.log(params);
   const slug = params?.slug;
-  console.log(slug);
+  // console.log(slug);
   const res = await fetch(
     `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${slug}`,
     {

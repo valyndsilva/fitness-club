@@ -5,6 +5,7 @@ import TargetImage from "app/assets/icons/target.png";
 import EquipmentImage from "app/assets/icons/equipment.png";
 import exercisesContext from "@/context/exercisesContext";
 import Image from "next/image";
+import unavailableImg from "app/assets/images/unavailable-image.jpg";
 type Props = {};
 
 export default function ExerciseDetail({}: Props) {
@@ -27,7 +28,7 @@ export default function ExerciseDetail({}: Props) {
   return (
     <div className="flex flex-col lg:flex-row p-5 items-center gap-16 dark:text-zinc-200">
       <img
-        src={gifUrl}
+        src={gifUrl || unavailableImg}
         alt={name}
         width="500"
         height="500"
@@ -46,7 +47,7 @@ export default function ExerciseDetail({}: Props) {
             <div className=" flex items-center justify-center w-24 h-24 rounded-full bg-[#FFF2DB]">
               <Image
                 src={item?.icon}
-                alt={bodyPart}
+                alt={bodyPart || ""}
                 style={{ width: "50px", height: "50px" }}
               />
             </div>

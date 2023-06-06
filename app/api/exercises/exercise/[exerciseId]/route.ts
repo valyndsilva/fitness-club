@@ -4,9 +4,9 @@ export async function GET(
   request: Request,
   { params }: { params: { exerciseId: string } }
 ) {
-  console.log(params);
+  // console.log(params);
   const exerciseId = params?.exerciseId;
-  console.log(exerciseId);
+  // console.log(exerciseId);
   const res = await fetch(
     `https://exercisedb.p.rapidapi.com/exercises/exercise/${exerciseId}`,
     {
@@ -19,5 +19,6 @@ export async function GET(
   );
   const data = await res.json();
   const bodyPartData = data;
+  // console.log(bodyPartData);
   return NextResponse.json(bodyPartData);
 }

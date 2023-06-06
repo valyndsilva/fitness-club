@@ -189,14 +189,14 @@ body {
   }
 
   .blur-spot1 {
-    background: rgba(253, 120, 43, 0.69);
+   background: rgba(253, 120, 143, 0.69);
     border-radius: 50%;
     position: absolute;
     z-index: -9;
   }
 
   .blur-spot2 {
-    background: rgba(253, 120, 143, 0.69);
+   background: rgba(253, 120, 143, 0.69);
     border-radius: 50%;
     position: absolute;
     z-index: -9;
@@ -211,7 +211,8 @@ body {
   .hero-blur2 {
     width: 22rem;
     height: 30rem;
-    left: 0rem;
+   right: 0rem;
+   bottom: 0rem;
   }
 
   .plan-blur-1 {
@@ -243,3 +244,11 @@ body {
     align-items: center;
   }
 }
+
+.MuiPagination-ul svg,.MuiTouchRipple-root, .MuiButtonBase-root{
+ @apply dark:!text-white !text-black;
+}
+
+ .MuiPagination-root .Mui-selected{
+ background-color:orange !important;
+ }

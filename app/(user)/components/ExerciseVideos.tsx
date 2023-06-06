@@ -5,8 +5,8 @@ import exercisesContext from "@/context/exercisesContext";
 type Props = {};
 
 export default function ExerciseVideos({}: Props) {
-  // if (!exerciseVideos.length) return <Loader />;
   const { exerciseDetail, exerciseVideos } = useContext(exercisesContext);
+  if (!exerciseVideos.length) return <Loader />;
   return (
     <div className="mt-5 p-5">
       <h2 className="text-2xl lg:text-4xl font-bold text-black mb-8 ml-5 mt-16 lg:mt-24 dark:text-zinc-200">
