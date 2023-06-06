@@ -1,50 +1,9 @@
 "use client";
-import { useTheme } from "next-themes";
 import React, {useRef, useState } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { BiPaperPlane } from "react-icons/bi";
 import { sendContactForm } from "../../../services";
 function JoinUs() {
-  const renderStrokeChanger = () => {
-    const { theme } = useTheme();
-    console.log({ theme });
-    if (theme === "dark") {
-      return (
-        <div className="space-y-5">
-          <h1 className="flex flex-col text-5xl font-bold uppercase flex-wrap text-center">
-            <span>
-              <span className="stroke-text stroke-text-dark">Get</span> In
-              Touch&nbsp;{" "}
-            </span>
-          </h1>
-          <p className="text-lg text-white">
-            Have a question or need assistance? Reach out to our friendly
-            support team. We're here to help you make the most of your Fitness
-            Club experience. Fill out our online
-            form, and we'll get back to you as soon as possible.
-          </p>
-        </div>
-      );
-    } else {
-      return (
-        <div className="space-y-5">
-          <h1 className="flex flex-col text-5xl font-bold uppercase flex-wrap text-center">
-            <span>
-              <span className="stroke-text stroke-text-light">Get</span> In
-              Touch&nbsp;
-            </span>
-          </h1>
-          <p className="text-lg text-black">
-            Have a question or need assistance? Reach out to our friendly
-            support team. We're here to help you make the most of your Fitness
-            Club experience. Fill out our online
-            form, and we'll get back to you as soon as possible.
-          </p>
-        </div>
-      );
-    }
-  };
-
   const [message, setMessage] = useState("");
   const formRef = useRef();
   const submitContact = async (e: any) => {
@@ -67,7 +26,24 @@ function JoinUs() {
   return (
     <section id="join-us" className="section mt-20 flex">
       <div className="my-10 flex flex-col gap-4 w-[80vw] mx-auto items-center justify-center ">
-        <div className=" my-5">{renderStrokeChanger()}</div>
+        <div className=" my-5">
+          <div className="space-y-5">
+            <h1 className="flex flex-col text-5xl font-bold uppercase flex-wrap text-center">
+              <span>
+                <span className="stroke-text stroke-text-light dark:stroke-text-dark">
+                  Get
+                </span>{" "}
+                In Touch&nbsp;
+              </span>
+            </h1>
+            <p className="text-lg text-black dark:text-white">
+              Have a question or need assistance? Reach out to our friendly
+              support team. We're here to help you make the most of your Fitness
+              Club experience. Fill out our online form, and we'll get back to
+              you as soon as possible.
+            </p>
+          </div>
+        </div>
         {message && (
           <div className="planCard flex justify-center p-4 rounded-lg items-center">
             {message}

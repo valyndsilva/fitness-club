@@ -6,7 +6,6 @@ import LogoLight from "app/assets/logo-light.png";
 import { BsFillSunFill, BsFillMoonStarsFill } from "react-icons/bs";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useMediaQuery } from "@react-hook/media-query";
 import { AiOutlineClose } from "react-icons/ai";
 import Image from "next/image";
 
@@ -14,7 +13,6 @@ function Header() {
   const [scrolled, setScrolled] = useState(false);
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
-  const isSmallScreen = useMediaQuery("(max-width: 1024px)");
   const [isNavOpen, setIsNavOpen] = useState(false);
   // console.log(isNavOpen);
 

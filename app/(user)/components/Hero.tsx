@@ -1,5 +1,4 @@
 "use client";
-import { useTheme } from "next-themes";
 import React from "react";
 import heroImg from "app/assets/images/main-banner.png";
 import Image from "next/image";
@@ -7,31 +6,6 @@ import { motion } from "framer-motion";
 import NumberCounter from "number-counter";
 import Link from "next/link";
 function Hero() {
-  const renderStrokeChanger = () => {
-    const { theme } = useTheme();
-    console.log({ theme });
-    if (theme === "dark") {
-      return (
-        <h1 className="flex flex-col text-4xl lg:text-7xl font-bold mt-10 uppercase flex-wrap lg:text-start">
-          <span>
-            <span className="stroke-text stroke-text-dark">Shape</span>{" "}
-            your&nbsp;
-          </span>
-          <span>ideal body</span>
-        </h1>
-      );
-    } else {
-      return (
-        <h1 className="flex flex-col text-4xl lg:text-7xl font-bold mt-10 uppercase flex-wrap lg:text-start">
-          <span>
-            <span className="stroke-text stroke-text-light">Shape</span>{" "}
-            your&nbsp;
-          </span>
-          <span>ideal body</span>
-        </h1>
-      );
-    }
-  };
   const transition = { type: "spring", duration: 3 };
   return (
     <section id="hero" className="relative ">
@@ -49,7 +23,15 @@ function Hero() {
               <span className="z-20">the best fitness club in the town</span>
             </div>
             <div className="flex flex-col gap-6 w-full items-center lg:items-start">
-              {renderStrokeChanger()}
+              <h1 className="flex flex-col text-4xl lg:text-7xl font-bold mt-10 uppercase flex-wrap lg:text-start">
+                <span>
+                  <span className="stroke-text stroke-text-light dark:stroke-text-dark">
+                    Shape
+                  </span>{" "}
+                  your&nbsp;
+                </span>
+                <span>ideal body</span>
+              </h1>
               <p className="flex text-xl normal-case font-light tracking-wide text-center lg:text-start w-[80%]">
                 Achieve your fitness goals with our comprehensive exercise
                 library and personalized workout plans. Join us today and start

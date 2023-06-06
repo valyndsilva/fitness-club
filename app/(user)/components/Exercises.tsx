@@ -6,9 +6,7 @@ import Loader from "./Loader";
 import ExerciseCard from "./ExerciseCard";
 // import { exercisesData } from "@/data/exerciseDbData";
 
-type Props = {};
-
-export default function Exercises({}: Props) {
+export default function Exercises() {
   const { exercises,setExercises, bodyPart } = useContext(exercisesContext);
   const [currentPage, setCurrentPage] = useState(1);
   const [exercisesPerPage] = useState(6);

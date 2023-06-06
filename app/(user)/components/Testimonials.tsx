@@ -7,39 +7,6 @@ import { testimonialsData } from "@/data/testimonialsData";
 import { motion } from "framer-motion";
 
 function Testimonials() {
-  const renderStrokeChanger = () => {
-    const { theme } = useTheme();
-    console.log({ theme });
-    if (theme === "dark") {
-      return (
-        <div className="space-y-2">
-          <span className="flex flex-col text-lg font-semibold uppercase text-orange-400 text-start">
-            testimonials
-          </span>
-          <h1 className="flex flex-col text-5xl font-bold uppercase flex-wrap text-start">
-            <span>
-              <span className="stroke-text stroke-text-dark">What they </span>
-              say about us?&nbsp;
-            </span>
-          </h1>
-        </div>
-      );
-    } else {
-      return (
-        <div className="space-y-2">
-          <span className="flex flex-col text-lg font-semibold uppercase text-orange-400 text-start">
-            testimonials
-          </span>
-          <h1 className="flex flex-col text-5xl font-bold uppercase flex-wrap text-start">
-            <span>
-              <span className="stroke-text stroke-text-light">What they </span>
-              say about us?&nbsp;
-            </span>
-          </h1>
-        </div>
-      );
-    }
-  };
   const [selected, setSelected] = useState(0);
   const testimonialsLength = testimonialsData.length;
   const transition = { type: "spring", duration: 3 };
@@ -51,7 +18,19 @@ function Testimonials() {
       <div className="col-span-1 ">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-6">
-            {renderStrokeChanger()}
+            <div className="space-y-2">
+              <span className="flex flex-col text-lg font-semibold uppercase text-orange-400 text-start">
+                testimonials
+              </span>
+              <h1 className="flex flex-col text-5xl font-bold uppercase flex-wrap text-start">
+                <span>
+                  <span className="stroke-text stroke-text-light dark:stroke-text-dark">
+                    What they{" "}
+                  </span>
+                  say about us?&nbsp;
+                </span>
+              </h1>
+            </div>
             <motion.p
               key={selected}
               initial={{ opacity: 0, x: 100 }}

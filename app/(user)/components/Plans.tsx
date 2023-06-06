@@ -1,57 +1,27 @@
-"use client";
-import { useTheme } from "next-themes";
-import React, { useEffect, useState } from "react";
-import { BsArrowRight, BsCheck2Circle } from "react-icons/bs";
+import React from "react";
+import { BsCheck2Circle } from "react-icons/bs";
 import { plansData } from "@/data/plansData";
-import { FaCrown } from "react-icons/fa";
 import Link from "next/link";
 function Plans() {
-  const { systemTheme, theme } = useTheme();
-
-  // To fix hydration UI mismatch issues, we need to wait until the component has mounted.
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const renderStrokeChanger = () => {
-    if (!mounted) return null;
-
-    const currentTheme = theme === "system" ? systemTheme : theme;
-
-    if (currentTheme === "dark") {
-      return (
-        <div className="space-y-2">
-          <h1 className="flex flex-col text-5xl font-bold uppercase flex-wrap text-start">
-            <span>
-              <span className="stroke-text stroke-text-dark">Start your</span>{" "}
-              fitness&nbsp;
-            </span>
-            <span className="stroke-text stroke-text-dark"> journey now</span>
-          </h1>
-        </div>
-      );
-    } else {
-      return (
-        <div className="space-y-2">
-          <h1 className="flex flex-col text-5xl font-bold uppercase flex-wrap text-start">
-            <span>
-              <span className="stroke-text stroke-text-light">Start</span> your
-              fitness&nbsp;
-            </span>
-            <span className="stroke-text stroke-text-light"> journey now</span>
-          </h1>
-        </div>
-      );
-    }
-  };
   return (
     <section id="plans" className="relative">
       <div className="lg:blur-spot1 lg:blur-[150px] lg:plan-blur-1"></div>
       <div className="lg:blur-spot2 lg:blur-[150px] lg:plan-blur-2"></div>
       <div className="section min-h-screen mt-20 flex flex-col justify-center items-center w-[80vw] mx-auto">
-        {renderStrokeChanger()}
+        <div className="space-y-2">
+          <h1 className="flex flex-col text-5xl font-bold uppercase flex-wrap text-start">
+            <span>
+              <span className="stroke-text stroke-text-light dark:stroke-text-dark">
+                Start
+              </span>{" "}
+              your fitness&nbsp;
+            </span>
+            <span className="stroke-text stroke-text-light dark:stroke-text-dark">
+              {" "}
+              journey now
+            </span>
+          </h1>
+        </div>
         <div className="my-10 grid grid-cols-1 md:grid-cols-3 p-5 gap-8 ">
           {plansData.map((plan, index) => (
             <div

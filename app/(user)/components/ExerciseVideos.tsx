@@ -2,9 +2,7 @@ import React, { useContext } from "react";
 import Loader from "./Loader";
 import exercisesContext from "@/context/exercisesContext";
 
-type Props = {};
-
-export default function ExerciseVideos({}: Props) {
+export default function ExerciseVideos() {
   const { exerciseDetail, exerciseVideos } = useContext(exercisesContext);
   if (!exerciseVideos.length) return <Loader />;
   return (

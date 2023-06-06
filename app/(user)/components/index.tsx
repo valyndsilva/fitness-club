@@ -8,7 +8,6 @@ export { default as BodyPart } from "./BodyPart";
 export { default as ExerciseCard } from "./ExerciseCard";
 export { default as ExerciseCardAlt } from "./ExerciseCardAlt";
 export { default as Exercises } from "./Exercises";
-export { default as Programs } from "./Programs";
 export { default as Reasons } from "./Reasons";
 export { default as Plans } from "./Plans";
 export { default as Testimonials } from "./Testimonials";
