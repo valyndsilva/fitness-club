@@ -12,7 +12,7 @@ type scrollVisibilityApiType = React.ContextType<typeof VisibilityContext>;
 
 interface Props {
   data?: any;
-  bodyParts?:any;
+  bodyParts?: any;
 }
 export default function HorizontalScrollBar({ data, bodyParts }: Props) {
   // export default function HorizontalScrollBar({ data }: Props) {
@@ -37,31 +37,30 @@ export default function HorizontalScrollBar({ data, bodyParts }: Props) {
   );
   return (
     <div className="w-[90vw]">
-      <ScrollMenu
-        LeftArrow={LeftArrow}
-        RightArrow={RightArrow}
-        onInit={restorePosition}
-        onScroll={savePosition}
-        onWheel={onWheel}
-      >
-        {data?.map((item: any) => (
-          <div
-            key={item.id || item}
-            itemID={item.id || item}
-            title={item.id || item}
-            className="mb-5"
-          >
-            {bodyParts ? (
-              <BodyPart
-                item={item}
-              />
-            ) : (
+      <div className=" max-w-7xl mx-auto">
+        <ScrollMenu
+          LeftArrow={LeftArrow}
+          RightArrow={RightArrow}
+          onInit={restorePosition}
+          onScroll={savePosition}
+          onWheel={onWheel}
+        >
+          {data?.map((item: any) => (
+            <div
+              key={item.id || item}
+              itemID={item.id || item}
+              title={item.id || item}
+              className="mb-5"
+            >
+              {bodyParts ? (
+                <BodyPart item={item} />
+              ) : (
                 <ExerciseCardAlt exercise={item} />
-
-            )}
-          </div>
-        ))}
-      </ScrollMenu>
+              )}
+            </div>
+          ))}
+        </ScrollMenu>
+      </div>
     </div>
   );
 }

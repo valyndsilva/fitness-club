@@ -61,7 +61,7 @@ export default function Exercises() {
             exercise.equipment.toLowerCase().includes(bodyPart) ||
             exercise.bodyPart.toLowerCase().includes(bodyPart)
         );
-        console.log(bodyPartData);
+        // console.log(bodyPartData);
         setExercises(bodyPartData);
 
         // Use dummy data

@@ -88,7 +88,7 @@ export default function page({ params }: Props) {
     fetchExercisesData();
   }, [exerciseId]);
   return (
-    <div className="relative pt-32 w-full items-center max-w-7xl justify-center mx-auto">
+    <div className="max-w-7xl mx-auto relative pt-32 w-full items-center justify-center">
       <ExerciseDetail />
       <ExerciseVideos />
       <SimilarExercises />
