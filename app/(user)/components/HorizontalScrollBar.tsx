@@ -54,8 +54,6 @@ export default function HorizontalScrollBar({ data, bodyParts }: Props) {
             {bodyParts ? (
               <BodyPart
                 item={item}
-                bodyPart={bodyPart}
-                setBodyPart={setBodyPart}
               />
             ) : (
                 <ExerciseCardAlt exercise={item} />

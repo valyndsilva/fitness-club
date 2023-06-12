@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 // import Icon from "app/assets/icons/gym.png";
 import All from "app/assets/bodyParts/all.png";
 import Back from "app/assets/bodyParts/back.png";
@@ -13,17 +13,19 @@ import Shoulders from "app/assets/bodyParts/shoulders.png";
 import Waist from "app/assets/bodyParts/waist.png";
 import Abs from "app/assets/bodyParts/abs.png";
 import Image from "next/image";
+import exercisesContext from "@/context/exercisesContext";
 type Props = {
   item: any;
-  setBodyPart: any;
-  bodyPart: any;
 };
 
-export default function BodyPart({ item, setBodyPart, bodyPart }: Props) {
+export default function BodyPart({ item }: Props) {
+    const { bodyPart, setBodyPart, setSearchTerm } =
+      useContext(exercisesContext);
   return (
     <div
       onClick={() => {
         setBodyPart(item);
+        setSearchTerm("");
         window.scrollTo({ top: 1800, left: 100, behavior: "smooth" });
       }}
       className={`${

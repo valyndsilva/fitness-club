@@ -24,6 +24,8 @@ interface Exercises {
   setTargetMuscleExercises: any;
   equipmentExercises: any;
   setEquipmentExercises: any;
+  searchTerm:any;
+  setSearchTerm:any;
 }
 export const exercisesContext = createContext<Exercises>({} as Exercises);
 
@@ -41,7 +43,7 @@ export function ExercisesProvider({ children }: ExercisesProviderProps) {
   const [targetMuscleExercises, setTargetMuscleExercises] = useState([]);
   const [equipmentExercises, setEquipmentExercises] = useState([]);
 
-
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
     <exercisesContext.Provider
@@ -62,6 +64,8 @@ export function ExercisesProvider({ children }: ExercisesProviderProps) {
         setTargetMuscleExercises,
         equipmentExercises,
         setEquipmentExercises,
+        searchTerm,
+        setSearchTerm,
       }}
     >
       {children}

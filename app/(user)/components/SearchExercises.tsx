@@ -6,7 +6,7 @@ import exercisesContext from "@/context/exercisesContext";
 // import { bodyPartsData, exercisesData } from "@/data/exerciseDbData";
 
 export default function SearchExercises() {
-  const { bodyParts, setBodyParts, setExercises, exercises } =
+  const { bodyParts, setBodyParts, setExercises, setSearchTerm } =
     useContext(exercisesContext);
   const [search, setSearch] = useState("");
 
@@ -30,6 +30,7 @@ export default function SearchExercises() {
   const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (search) {
+      setSearchTerm(search);
       const fetchExercisesData = async () => {
         const exercisesResponse = await fetch("api/exercises", {
           cache: "no-store",

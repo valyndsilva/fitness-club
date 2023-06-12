@@ -7,7 +7,7 @@ import ExerciseCard from "./ExerciseCard";
 // import { exercisesData } from "@/data/exerciseDbData";
 
 export default function Exercises() {
-  const { exercises, setExercises, bodyPart } = useContext(exercisesContext);
+  const { exercises, setExercises, bodyPart, searchTerm } = useContext(exercisesContext);
   const [currentPage, setCurrentPage] = useState(1);
   const [exercisesPerPage] = useState(6);
   // console.log({exercises});
@@ -70,7 +70,7 @@ export default function Exercises() {
       <h4 className="text-3xl lg:text-4xl mb-10">
         Exercise results for{" "}
         <span className="font-medium capitalize text-orange-500">
-          {bodyPart}
+          {searchTerm ? searchTerm : bodyPart}
         </span>
         :
       </h4>
