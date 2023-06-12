@@ -7,7 +7,8 @@ import ExerciseCard from "./ExerciseCard";
 // import { exercisesData } from "@/data/exerciseDbData";
 
 export default function Exercises() {
-  const { exercises, setExercises, bodyPart, searchTerm } = useContext(exercisesContext);
+  const { exercises, setExercises, bodyPart, searchTerm } =
+    useContext(exercisesContext);
   const [currentPage, setCurrentPage] = useState(1);
   const [exercisesPerPage] = useState(6);
   // console.log({exercises});
@@ -34,18 +35,34 @@ export default function Exercises() {
         });
         const exercisesData = await exercisesResponse.json();
         // console.log({ exercisesData });
-        data = exercisesData;
-
+        setExercises(exercisesData);
         // Use dummy data
         // data = exercisesData;
       } else {
-        const bodyPartResponse = await fetch(
-          `api/exercises/bodyPart/${bodyPart}`,
-          { cache: "no-store" }
-        );
-        const bodyPartData = await bodyPartResponse.json();
+        // const bodyPartResponse = await fetch(
+        //   `api/exercises/bodyPart/${bodyPart}`,
+        //   { cache: "no-store" }
+        // );
+        // const bodyPartData = await bodyPartResponse.json();
         // console.log(bodyPartData);
-        data = bodyPartData;
+        // data = bodyPartData;
+        // setExercises(data);
+
+        // Alternative fetch
+        const exercisesResponse = await fetch("api/exercises", {
+          cache: "no-store",
+        });
+        const exercisesData = await exercisesResponse.json();
+        // console.log({ exercisesData });
+        const bodyPartData = exercisesData.filter(
+          (exercise: any) =>
+            exercise.name.toLowerCase().includes(bodyPart) ||
+            exercise.target.toLowerCase().includes(bodyPart) ||
+            exercise.equipment.toLowerCase().includes(bodyPart) ||
+            exercise.bodyPart.toLowerCase().includes(bodyPart)
+        );
+        console.log(bodyPartData);
+        setExercises(bodyPartData);
 
         // Use dummy data
         // const bodyPartData = exercisesData.filter(
@@ -58,7 +75,6 @@ export default function Exercises() {
         // console.log(bodyPartData);
         // data = bodyPartData;
       }
-      setExercises(data);
     };
     fetchExercisesData();
   }, [bodyPart]);
@@ -80,6 +96,11 @@ export default function Exercises() {
             <ExerciseCard key={idx} exercise={exercise} />
           </div>
         ))}
+        {/* {currentExercises?.map((exercise: any, idx: number) => (
+          <div className=" col-span-1 md:col-span-3 lg:col-span-3" key={idx}>
+            <ExerciseCard key={idx} exercise={exercise} />
+          </div>
+        ))} */}
       </div>
       <div className="flex justify-center mt-5">
         {exercises.length > 9 && (
