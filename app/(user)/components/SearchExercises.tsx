@@ -12,11 +12,13 @@ export default function SearchExercises() {
 
   useEffect(() => {
     const fetchBodyPartsData = async () => {
-      const bodyPartsResponse = await fetch("api/exercises/bodyPartList");
+      const bodyPartsResponse = await fetch("api/exercises/bodyPartList", {
+        cache: "no-store",
+      });
       const bodyPartsData = await bodyPartsResponse.json();
-      console.log(bodyPartsData);
-       setBodyParts([...bodyPartsData]);
-      // setBodyParts(["all", ...bodyPartsData]);
+      // console.log(bodyPartsData);
+      //  setBodyParts([...bodyPartsData]);
+      setBodyParts(["all", ...bodyPartsData]);
 
       // Use dummy data
       // setBodyParts(["all", ...bodyPartsData]);
@@ -29,12 +31,14 @@ export default function SearchExercises() {
     e.preventDefault();
     if (search) {
       const fetchExercisesData = async () => {
-        const exercisesResponse = await fetch("api/exercises");
+        const exercisesResponse = await fetch("api/exercises", {
+          cache: "no-store",
+        });
         const exercisesData = await exercisesResponse.json();
-        console.log(exercisesData);
+        // console.log(exercisesData);
 
         // Use dummy data
-        console.log(exercisesData);
+        // console.log(exercisesData);
 
         const searchedExercises = exercisesData.filter(
           (exercise: any) =>
@@ -43,7 +47,7 @@ export default function SearchExercises() {
             exercise.equipment.toLowerCase().includes(search) ||
             exercise.bodyPart.toLowerCase().includes(search)
         );
-        console.log(searchedExercises);
+        // console.log(searchedExercises);
         window.scrollTo({ top: 1800, left: 100, behavior: "smooth" });
         setSearch("");
         setExercises(searchedExercises);
@@ -54,7 +58,7 @@ export default function SearchExercises() {
 
   const renderStrokeChanger = () => {
     const { theme } = useTheme();
-    console.log({ theme });
+    // console.log({ theme });
     if (theme === "dark") {
       return (
         <h1 className="flex flex-col text-3xl lg:text-7xl font-bold uppercase flex-wrap">

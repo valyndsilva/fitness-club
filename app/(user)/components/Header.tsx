@@ -56,13 +56,19 @@ function Header() {
     if (currentTheme === "dark") {
       return (
         <Link href="/">
-          <Image src={LogoDark} fill className="object-contain" alt="" />
+          <Image src={LogoDark} fill className="object-contain" alt="" sizes={"100%"} />
         </Link>
       );
     } else {
       return (
         <Link href="/">
-          <Image src={LogoLight} fill className="object-contain" alt="" />
+          <Image
+            src={LogoLight}
+            fill
+            className="object-contain"
+            alt=""
+            sizes={"100%"}
+          />
         </Link>
       );
     }

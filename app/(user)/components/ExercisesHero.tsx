@@ -59,6 +59,8 @@ function Hero() {
                   alt="hero"
                   fill
                   className="object-contain"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority
                 />
               </div>
               <div className="flex gap-4 animate-move bg-orange-200 dark:bg-darkAsh shadow-md w-fit p-4 rounded-lg absolute right-[30%] top-[70%] lg:right-96 lg:top-2/4 items-center z-30">
@@ -66,6 +68,7 @@ function Hero() {
                   <Image
                     src={caloriesImg}
                     alt="heart"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     fill
                     className="object-contain"
                   />

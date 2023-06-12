@@ -7,10 +7,10 @@ import ExerciseCard from "./ExerciseCard";
 // import { exercisesData } from "@/data/exerciseDbData";
 
 export default function Exercises() {
-  const { exercises,setExercises, bodyPart } = useContext(exercisesContext);
+  const { exercises, setExercises, bodyPart } = useContext(exercisesContext);
   const [currentPage, setCurrentPage] = useState(1);
   const [exercisesPerPage] = useState(6);
-  console.log({exercises});
+  // console.log({exercises});
   // Pagination
   const indexOfLastExercise = currentPage * exercisesPerPage;
   const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
@@ -25,25 +25,27 @@ export default function Exercises() {
     window.scrollTo({ top: 1800, behavior: "smooth" });
   };
 
-   useEffect(() => {
+  useEffect(() => {
     const fetchExercisesData = async () => {
       let data = [];
       if (bodyPart === "all") {
-         const exercisesResponse = await fetch("api/exercises");
-         const exercisesData = await exercisesResponse.json();
-         console.log({exercisesData}); 
-         data = exercisesData;
-        
+        const exercisesResponse = await fetch("api/exercises", {
+          cache: "no-store",
+        });
+        const exercisesData = await exercisesResponse.json();
+        console.log({ exercisesData });
+        data = exercisesData;
+
         // Use dummy data
         // data = exercisesData;
       } else {
         const bodyPartResponse = await fetch(
-          `api/exercises/bodyPart/${bodyPart}`
+          `api/exercises/bodyPart/${bodyPart}`,
+          { cache: "no-store" }
         );
         const bodyPartData = await bodyPartResponse.json();
-        console.log(bodyPartData);
+        // console.log(bodyPartData);
         data = bodyPartData;
-
 
         // Use dummy data
         // const bodyPartData = exercisesData.filter(
@@ -67,7 +69,10 @@ export default function Exercises() {
     <div className="max-w-7xl mx-auto p-5">
       <h4 className="text-3xl lg:text-4xl mb-10">
         Exercise results for{" "}
-        <span className="font-medium capitalize text-orange-500">{bodyPart}</span>:
+        <span className="font-medium capitalize text-orange-500">
+          {bodyPart}
+        </span>
+        :
       </h4>
       <div className="grid md:grid-cols-6 lg:grid-cols-9 gap-4">
         {currentExercises?.map((exercise: any, idx: number) => (
@@ -88,7 +93,6 @@ export default function Exercises() {
             size="large"
           />
         )}
-        
       </div>
     </div>
   );

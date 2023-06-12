@@ -17,7 +17,7 @@ interface Props {
 export default function HorizontalScrollBar({ data, bodyParts }: Props) {
   // export default function HorizontalScrollBar({ data }: Props) {
   const { setBodyPart, bodyPart } = useContext(exercisesContext);
-  console.log({ bodyPart });
+  // console.log({ bodyPart });
   // can save and restore position if needed
   const [position, setPosition] = React.useState(100);
   const restorePosition = React.useCallback(
