@@ -33,7 +33,7 @@ export default function Exercises() {
           cache: "no-store",
         });
         const exercisesData = await exercisesResponse.json();
-        console.log({ exercisesData });
+        // console.log({ exercisesData });
         data = exercisesData;
 
         // Use dummy data
